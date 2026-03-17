@@ -90,7 +90,11 @@ footer {
   border-top: 1px solid #1e293b;
   color: #64748b;
 }
-</style>
+<<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+  </script>/style>
 </head><link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0f172a">
 
