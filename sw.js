@@ -1,21 +1,6 @@
-const CACHE_NAME = "app-cache-v1";
-
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll([
-        "./",
-        "./index.html",
-        "./manifest.json"
-      ]);
-    })
-  );
+self.addEventListener("install", (e) => {
+  console.log("Service Worker instalado");
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
-    })
-  );
+self.addEventListener("fetch", (e) => {
 });
