@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Painel AIM HEAD</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: radial-gradient(circle, #0a001a, #000);
+    color: white;
+}
+
+.painel {
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(10,10,30,0.95);
+    box-shadow: 0 0 25px #6a00ff;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #6a00ff; }
+    to { box-shadow: 0 0 30px #00c3ff; }
+}
+
+h2 { text-align: center; }
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg,#6a00ff,#00c3ff);
+    color: white;
+    font-size: 15px;
+}
+
+.status {
+    text-align: center;
+    margin-top: 10px;
+    color: #00ffcc;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="painel">
+<h2>Painel AIM HEAD</h2>
+
+<button onclick="start()">▶ Iniciar</button>
+<button onclick="inject()">⚡ Executar</button>
+
+<div class="status" id="status">Sistema aguardando...</div>
+
+<button onclick="hidePanel()">👁 Esconder</button>
+
+<div class="footer">@respaw027</div>
+</div>
+
+<script>
+function start(){
+ document.getElementById("status").innerText="Inicializando sistema...";
+}
+
+function inject(){
+ let s=document.getElementById("status");
+ s.innerText="Processando...";
+ setTimeout(()=>{
+  s.innerText="Operação concluída ✔";
+ },2000);
+}
+
+function hidePanel(){
+ document.body.innerHTML="";
+}
+</script>
+
+</body>
+</html>

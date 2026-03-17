@@ -1,0 +1,9 @@
+{
+  "name": "Painel AIM HEAD",
+  "short_name": "AIM HEAD",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#6a00ff",
+  "icons": []
+}
