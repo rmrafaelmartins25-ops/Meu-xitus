@@ -1,94 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Painel AIM HEAD</title>
-
-<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Site Pro</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial;
-    background: radial-gradient(circle, #0a001a, #000);
-    color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
 }
 
-.painel {
-    width: 90%;
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 20px;
-    background: rgba(10,10,30,0.95);
-    box-shadow: 0 0 25px #6a00ff;
-    animation: glow 2s infinite alternate;
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 10px #6a00ff; }
-    to { box-shadow: 0 0 30px #00c3ff; }
+nav h1 {
+  margin: 0;
 }
 
-h2 { text-align: center; }
-
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: none;
-    background: linear-gradient(90deg,#6a00ff,#00c3ff);
-    color: white;
-    font-size: 15px;
+nav button {
+  background: #3b82f6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
 }
 
-.status {
-    text-align: center;
-    margin-top: 10px;
-    color: #00ffcc;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
+.hero h2 {
+  font-size: 32px;
+}
+
+.hero p {
+  color: #94a3b8;
+}
+
+/* CARDS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO */
+.btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  background: #3b82f6;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #1e293b;
+  color: #64748b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="painel">
-<h2>Painel AIM HEAD</h2>
+<!-- MENU -->
+<nav>
+  <h1>🚀 MeuSite</h1>
+  <button onclick="alert('Login em breve')">Login</button>
+</nav>
 
-<button onclick="start()">▶ Iniciar</button>
-<button onclick="inject()">⚡ Executar</button>
+<!-- HERO -->
+<section class="hero">
+  <h2>Bem-vindo ao meu site</h2>
+  <p>Um site moderno feito com HTML + GitHub Pages</p>
+</section>
 
-<div class="status" id="status">Sistema aguardando...</div>
+<!-- CARDS -->
+<div class="container">
 
-<button onclick="hidePanel()">👁 Esconder</button>
+  <div class="card">
+    <h3>Projeto 1</h3>
+    <p>Descrição do projeto.</p>
+    <div class="btn" onclick="alert('Abrindo...')">Abrir</div>
+  </div>
 
-<div class="footer">@respaw027</div>
+  <div class="card">
+    <h3>Projeto 2</h3>
+    <p>Outro projeto legal.</p>
+    <div class="btn" onclick="alert('Abrindo...')">Abrir</div>
+  </div>
+
+  <div class="card">
+    <h3>Projeto 3</h3>
+    <p>Mais um exemplo.</p>
+    <div class="btn" onclick="alert('Abrindo...')">Abrir</div>
+  </div>
+
 </div>
 
-<script>
-function start(){
- document.getElementById("status").innerText="Inicializando sistema...";
-}
-
-function inject(){
- let s=document.getElementById("status");
- s.innerText="Processando...";
- setTimeout(()=>{
-  s.innerText="Operação concluída ✔";
- },2000);
-}
-
-function hidePanel(){
- document.body.innerHTML="";
-}
-</script>
+<!-- RODAPÉ -->
+<footer>
+  © 2026 - Meu Site | Criado por você 😎
+</footer>
 
 </body>
 </html>
